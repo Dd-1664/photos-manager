@@ -19,6 +19,4 @@ parameters:
     database_driver: pdo_mysql
 
 
-    # SEO
-    seo_meta_description: 'upload & display photos'
 
