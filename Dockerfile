@@ -37,7 +37,7 @@ RUN /bin/bash -c 'cd /var/www/html/ && php bin/console assets:install && rm -rf 
 EXPOSE 80
 
 # Need this to edit volumes on KiteMatic
-# VOLUME /var/www/html
+VOLUME /var/www/html
 
 # Run Symfony script
 CMD ["/bin/bash", "-c", "/var/www/run-symfony.Win.sh"]

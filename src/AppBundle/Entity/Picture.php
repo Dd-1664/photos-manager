@@ -19,43 +19,36 @@ class Picture
      * @var integer
      */
     protected $id;
-    
+
+   /**
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $pictureName;
+
+    /**
+     * @ORM\Column(type="integer")
+     *
+     * @var integer
+     */
+    private $pictureSize;
+
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
-     * @Vich\UploadableField(mapping="img_uploads", fileNameProperty="pictureName", size="pictureSize")
+     * @Vich\UploadableField(mapping="pictures_upload", fileNameProperty="pictureName", size="pictureSize")
      * @var File
      */
     protected $pictureFile;
 
     /**
-     * @ORM\Column(name="pictureName",type="string", length=255)
-     * @var string
-     */
-    protected $pictureName;
-
-    /**
-     * @ORM\Column(name="pictureSize",type="integer")
-     * @var integer
-     */
-    private $pictureSize;
-
-    /** 
      * @ORM\Column(name="updatedAt", type="datetime")
      * @var \DateTime
      */
    private $updatedAt;
 
-    // GETTERS & SETTERS
-    public function getId()
-    {
-        return $this->id;
-    }
 
-    public function setId($id)
-	{
-		$this->id = $id;
-    }
-    
+
+    // GETTERS & SETTERS
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
      * of 'UploadedFile' is injected into this setter to trigger the  update. If this
@@ -81,8 +74,16 @@ class Picture
         return $this->pictureFile;
     }
 
+    public function getId()
+    {
+        return $this->id;
+    }
 
-    
+    public function setId($id)
+	{
+		$this->id = $id;
+    }
+
     public function setPictureName(?string $pictureName): void
     {
         $this->pictureName = $pictureName;
@@ -92,8 +93,6 @@ class Picture
     {
         return $this->pictureName;
     }
-
-
 
     public function setPictureSize(?int $pictureSize): void
     {
