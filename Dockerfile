@@ -31,7 +31,7 @@ RUN /bin/bash -c 'cd /var/www/html/ && rm -rf var/cache/'
 RUN /bin/bash -c 'composer install --optimize-autoloader --working-dir=/var/www/html/'
 
 # Run Webpack (production)
-RUN /bin/bash -c 'cd /var/www/html/ && npm run webpack'
+RUN /bin/bash -c 'cd /var/www/html/ && node_modules/.bin/encore production'
 RUN /bin/bash -c 'cd /var/www/html/ && php bin/console assets:install && rm -rf var/cache/*'
 
 EXPOSE 80

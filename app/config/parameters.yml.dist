@@ -11,12 +11,11 @@ parameters:
 
 
     # Database
-    database_host: 192.168.1.117
-    database_port: 3306
-    database_name: pictures
-    database_user: root
-    database_password: admin
-    database_driver: pdo_mysql
+    database_host:      192.168.1.117
+    database_port:      3306
+    database_name:      pictures_dev
+    database_user:      remote
+    database_password:  pass
 
 
 
