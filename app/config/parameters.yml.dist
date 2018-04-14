@@ -1,0 +1,24 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# https://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+
+
+parameters:
+
+    # Globals
+    secret: dda87f90077450a74234x64
+    locale: 'en'
+
+
+    # Database
+    database_host: 192.168.1.117
+    database_port: 3306
+    database_name: pictures
+    database_user: root
+    database_password: admin
+    database_driver: pdo_mysql
+
+
+    # SEO
+    seo_meta_description: 'upload & display photos'
+

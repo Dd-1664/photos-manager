@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>{% block title %}Picture Project{% endblock %}</title>
+        {% block stylesheets %}
+
+            {# BOOTSTRAP ALTERNATIVE #}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+            {# SCSS #}
+            <link rel="stylesheet" type="text/css" href="{{ asset("build/css/pics.css") }}">
+            {# FONT AWESOME #}
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            {# GOOGLE FONTS #}
+            <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body id="page-top">
+    <main class="container-fluid content">
+        {% block body %}{% endblock %}
+    </main>
+        {% block javascripts %}
+            {# JQUERY #}
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+            {# BOOTSTRAP #}
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+            {# CUSTOM JS #}
+                <script src="{{ asset("build/js/app.js") }}"></script>
+        {% endblock %}
+    </body>
+</html>
