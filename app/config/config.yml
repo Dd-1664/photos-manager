@@ -10,7 +10,7 @@ parameters:
 
 framework:
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -73,3 +73,8 @@ vich_uploader:
             inject_on_load: false
             delete_on_update: true
             delete_on_remove: true
+# EasyAdmin Configuration
+easy_admin:
+    entities:
+        Picture:
+            class: AppBundle\Entity\Picture

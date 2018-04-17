@@ -16,7 +16,16 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // Formulaire pour upload des photos
+        // DISPLAY BIG PICTURES
+        // $bigPics = $this->getDoctrine()
+        //     ->getRepository(Picture::class)
+        //     ->find($id);
+
+        // if ($bigPics == null or $bigPics == '') {
+        //     throw $this->createNotFoundException('image doesn\'t exist');
+        // }
+
+        // CREATE & DISPLAY FORM
         $photos = new Picture();
 
         $form = $this->createForm(PictureType::class, $photos);
@@ -39,7 +48,8 @@ class DefaultController extends Controller
         $template = $this->render(
             'AppBundle:Default:default.html.twig',
             [
-                "form" => $form->createView()
+                "form" => $form->createView(),
+                // "BigPictures" => $bigPics,
             ]
         );
         return $template;

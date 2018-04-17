@@ -2,10 +2,13 @@
 
 # TODO:
 
-* Remplir la base
-* Afficher le formulaire
-* manager les images
-* installer admin panel (EasyAdmin)
+* manager les images avec cloudinary
+* remplir la base quand upload
+* afficher un slider 
+    <https://codepen.io/ritz078/pen/bEYOov>
+    <https://github.com/darsain/sly>
+    <http://darsa.in/sly/>
+    <http://kenwheeler.github.io/slick/>
 
 ---
 
@@ -14,7 +17,6 @@
 * Exécuter `php bin/console doctrine:database:create` pour créer la base sans table
 * Exécuter `php bin/console doctrine:schema:validate` pour verifier que tout est bon avec le mapping
 * Exécuter `php bin/console doctrine:schema:create` pour créer la structure des tables sans contenu
-* Remplir les tables de la base avec du contenu
 
 ---
 

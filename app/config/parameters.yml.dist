@@ -17,5 +17,7 @@ parameters:
     database_user:      remote
     database_password:  pass
 
+    # CDN configuration
+    # https://api.cloudinary.com/v1_1/<cloud_name>/<resource_type>/upload
 
 
