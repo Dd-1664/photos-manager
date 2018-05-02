@@ -14,24 +14,49 @@
             <link rel="stylesheet" type="text/css" href="{{ asset("build/css/pics.css") }}">
             {# FONT AWESOME #}
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            {#<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">#}
             {# GOOGLE FONTS #}
             <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
+
     <body id="page-top">
+    <header style="background-color: #2c4762; color: ghostwhite; padding: 20px">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="{{ app.request.baseUrl }}/">
+                    <h1>Photos Manager</h1>
+                </a>
+            </div>
+            <div class="col-md-7"></div>
+            <div class="col-md-1">
+                <a href="{{ app.request.baseUrl }}/upload"><i style="color: whitesmoke; font-size: 40px" class="fa fa-upload"></i></a>
+
+            </div>
+        </div>
+    </header>
+
     <main class="container-fluid content">
         {% block body %}{% endblock %}
     </main>
         {% block javascripts %}
-            {# JQUERY #}
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-            {# BOOTSTRAP #}
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-            {# CUSTOM JS #}
-                <script src="{{ asset("build/js/app.js") }}"></script>
+        {# JQUERY #}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        {# BOOTSTRAP #}
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        {# CUSTOM JS #}
+            <script src="{{ asset("build/js/app.js") }}"></script>
+        {# WIDGET CLOUDINARY FOR UPLOAD #}
+            <script src=" http://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+            <script type="text/javascript">
+                    document.getElementById("upload_widget_opener").addEventListener("click", function() {
+                        cloudinary.openUploadWidget({ cloud_name: 'dmeah4pxt', upload_preset: 'hp5rkegi'},
+                            function(error, result) { console.log(error, result) });
+                    }, false);
+            </script>
         {% endblock %}
     </body>
 </html>

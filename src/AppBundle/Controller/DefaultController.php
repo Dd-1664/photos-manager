@@ -14,16 +14,25 @@ class DefaultController extends Controller
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
-        // DISPLAY BIG PICTURES
-        // $bigPics = $this->getDoctrine()
-        //     ->getRepository(Picture::class)
-        //     ->find($id);
+        return $this->render('AppBundle:Default:default.html.twig');
+    }
 
-        // if ($bigPics == null or $bigPics == '') {
-        //     throw $this->createNotFoundException('image doesn\'t exist');
-        // }
+
+    /**
+     * @Route("/upload", name="upload_page")
+     */
+    public function uploadAction(Request $request) {
+
+        // DISPLAY BIG PICTURES
+//         $bigPics = $this->getDoctrine()
+//             ->getRepository(Picture::class)
+//             ->find($id);
+//
+//         if ($bigPics == null or $bigPics == '') {
+//             throw $this->createNotFoundException('image doesn\'t exist');
+//         }
 
         // CREATE & DISPLAY FORM
         $photos = new Picture();
@@ -42,16 +51,21 @@ class DefaultController extends Controller
 
             $em->flush();
 
-            $this->addFlash("success", "Image uploaded");
+//            $this->get('speicher210_cloudinary.uploader')->get($photos);
+//            $photos->get('speicher210_cloudinary.uploader');
+//            $this->addFlash("success", "Image uploaded");
         }
 
         $template = $this->render(
-            'AppBundle:Default:default.html.twig',
+            'AppBundle:Default:upload.html.twig',
             [
                 "form" => $form->createView(),
-                // "BigPictures" => $bigPics,
+//                "photos" => $photos,
+//                 "BigPictures" => $bigPics,
             ]
         );
         return $template;
+
     }
+
 }

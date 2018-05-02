@@ -1,4 +1,5 @@
-# Picture Project
+Picture Project
+===============
 
 # TODO:
 
@@ -15,8 +16,8 @@
 # DB:
 
 * Exécuter `php bin/console doctrine:database:create` pour créer la base sans table
-* Exécuter `php bin/console doctrine:schema:validate` pour verifier que tout est bon avec le mapping
 * Exécuter `php bin/console doctrine:schema:create` pour créer la structure des tables sans contenu
+* Exécuter `php bin/console doctrine:schema:validate` pour verifier que tout est bon avec le mapping
 
 ---
 

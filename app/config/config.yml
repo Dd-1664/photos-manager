@@ -73,8 +73,19 @@ vich_uploader:
             inject_on_load: false
             delete_on_update: true
             delete_on_remove: true
+
 # EasyAdmin Configuration
 easy_admin:
     entities:
         Picture:
             class: AppBundle\Entity\Picture
+
+# Cloudinary Symfony Configuration -> speicher210
+#speicher210_cloudinary:
+#    url: cloudinary://xx:xx@xx
+#    cloud_name: xx
+#    access_identifier:
+#        api_key: xx
+#        api_secret: xx
+#    options:
+#        secure: true

@@ -2,23 +2,19 @@
 {% block body %}
     <!-- Header -->
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="row">
-                <div class="col-md-4">
-                    {% if form is not null and form is defined %}
-                        {{ form_start(form) }}
-                        {{ form_end(form) }}
-                    {% endif %}
-                </div>
+        <div class="col-md-4">
+            {% if form is not null and form is defined %}
+                {{ form_start(form) }}
+                {{ form_end(form) }}
+            {% endif %}
+        </div>
 
-                <div class="col-md-4">
-                    <a href="#" class="btn" id="upload_widget_opener">Upload to CDN</a>
-                </div>
+        <div class="col-md-4">
+            <a href="#" class="btn" id="upload_widget_opener">Upload to CDN</a>
+        </div>
 
-                <div class="col-md-4">
-                    {{ dump() }}
-                </div>
-            </div>
+        <div class="col-md-4">
+            {{ dump() }}
         </div>
     </div>
 {% endblock body %}

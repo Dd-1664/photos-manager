@@ -7,17 +7,21 @@ parameters:
 
     # Globals
     secret: dda87f90077450a74234x64
-    locale: 'en'
+    locale: en
 
 
-    # Database
-    database_host:      192.168.1.117
+    # Primary Database
+
+    # database_host:      192.168.1.117
+    # database_port:      3306
+    # database_name:      pictures_dev
+    # database_user:      remote
+    # database_password:  pass
+
+    # 2nd Database
+    database_host:      192.168.1.228
     database_port:      3306
     database_name:      pictures_dev
-    database_user:      remote
-    database_password:  pass
-
-    # CDN configuration
-    # https://api.cloudinary.com/v1_1/<cloud_name>/<resource_type>/upload
-
+    database_user:      root
+    database_password:  M4st3rY0d4
 

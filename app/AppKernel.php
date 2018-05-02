@@ -18,7 +18,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
             new EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle(),
-
+//            new Speicher210\CloudinaryBundle\Speicher210CloudinaryBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
